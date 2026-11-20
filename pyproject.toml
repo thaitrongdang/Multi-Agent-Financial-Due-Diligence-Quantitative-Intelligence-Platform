@@ -26,6 +26,8 @@ dependencies = [
     "langchain-groq>=1.2.1",
     "langchain-ollama>=1.1.0",
     "python-multipart>=0.0.34",
+    "streamlit>=1.67.0",
+    "plotly>=7.1.0",
 ]
 
 [dependency-groups]

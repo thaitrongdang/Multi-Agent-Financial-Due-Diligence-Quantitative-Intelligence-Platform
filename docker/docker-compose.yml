@@ -38,6 +38,39 @@ services:
       timeout: 3s
       retries: 5
 
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.api
+    container_name: fin-intel-api
+    env_file:
+      - ../.env
+    environment:
+      POSTGRES_URL: postgresql+asyncpg://fin_user:fin_pass@postgres:5432/fin_intel
+      QDRANT_URL: http://qdrant:6333
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+
+  ui:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.ui
+    container_name: fin-intel-ui
+    environment:
+      API_BASE_URL: http://api:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+
 volumes:
   postgres_data:
   qdrant_data:
