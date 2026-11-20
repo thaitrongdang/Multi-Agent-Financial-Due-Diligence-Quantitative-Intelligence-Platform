@@ -92,6 +92,9 @@ class AblationSimulatedLLM(BaseChatModel):
 
     @staticmethod
     def _synthesize_from_prompt(prompt: str) -> str:
+        query_part = prompt.split("USER QUERY: ", 1)[1].split(
+            "\n\nVERIFIED QUANTITATIVE METRICS:", 1
+        )[0]
         metrics_part = prompt.split("VERIFIED QUANTITATIVE METRICS:\n", 1)[1].split(
             "\n\nRETRIEVED FILING CONTEXTS:", 1
         )[0]
@@ -103,6 +106,7 @@ class AblationSimulatedLLM(BaseChatModel):
 
         lines = [
             f"## Due Diligence Memo: {metrics.get('ticker')}",
+            f"### Executive Summary: {query_part}",
             f"- Current Ratio: {metrics.get('current_ratio')}",
             f"- Debt-to-Equity: {metrics.get('debt_to_equity')}",
             f"- Net Debt / EBITDA: {metrics.get('net_debt_to_ebitda')}",
