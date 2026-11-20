@@ -1,1 +1,1 @@
-﻿# Multi-Agent Financial Due Diligence & Quantitative Intelligence Platform
+# Multi-Agent Financial Due Diligence & Quantitative Intelligence Platform
