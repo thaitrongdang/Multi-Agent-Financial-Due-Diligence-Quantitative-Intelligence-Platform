@@ -1,0 +1,38 @@
+name: Evaluation Quality Gate
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/rag/**"
+      - "src/agents/**"
+      - "src/quant/**"
+      - "evaluation/**"
+
+jobs:
+  ragas-eval-gate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run automated ablation benchmark & verify thresholds
+        run: |
+          uv run python -c "
+          from evaluation.run_benchmark import run_ablation_benchmark
+          summaries = run_ablation_benchmark(use_live_llm=False)
+          full = next(s for s in summaries if s['variant'] == 'full_multi_agent')
+          print('Full Multi-Agent Benchmark:', full)
+          assert full['avg_faithfulness'] >= 0.95, f'Faithfulness too low: {full}'
+          assert full['avg_context_recall'] >= 0.90, f'Context recall too low: {full}'
+          assert full['avg_answer_relevance'] >= 0.85, f'Answer relevance too low: {full}'
+          "
