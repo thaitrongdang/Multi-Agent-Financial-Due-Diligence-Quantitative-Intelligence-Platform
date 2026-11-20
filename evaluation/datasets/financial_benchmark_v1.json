@@ -1,0 +1,168 @@
+[
+  {
+    "question_id": "FPT_Q1",
+    "ticker": "FPT.VN",
+    "fiscal_year": 2025,
+    "question": "Assess FPT short-term corporate bond maturity and current liquidity ratio.",
+    "ground_truth_answer": "FPT.VN has a current ratio of 1.50 and 1250 VND Bn in short-term corporate bonds maturing in Q3 2026.",
+    "expected_chunk_ids": ["FPT.VN_2025_p14_t0", "FPT.VN_2025_p14_c1"],
+    "expected_facts": ["1.5", "1250", "Q3 2026"],
+    "financial_input": {
+      "ticker": "FPT.VN",
+      "fiscal_year": 2025,
+      "currency": "VND",
+      "revenue": 62800.0,
+      "cost_of_revenue": 38900.0,
+      "operating_income": 11200.0,
+      "ebitda": 13500.0,
+      "net_income": 9400.0,
+      "total_assets": 68000.0,
+      "current_assets": 36000.0,
+      "inventory": 2400.0,
+      "cash_and_equivalents": 14500.0,
+      "current_liabilities": 24000.0,
+      "total_debt": 15000.0,
+      "total_equity": 32000.0,
+      "operating_cash_flow": 11800.0,
+      "capital_expenditure": -3200.0
+    },
+    "news_headlines": [
+      "FPT records 22% software export growth in Japan and APAC",
+      "FPT expands AI factory infrastructure investment"
+    ],
+    "corpus_chunks": [
+      {
+        "chunk_id": "FPT.VN_2025_p14_t0",
+        "ticker": "FPT.VN",
+        "fiscal_year": 2025,
+        "page_number": 14,
+        "chunk_type": "table",
+        "content": "| Debt Facility | Principal (VND Bn) | Maturity |\n| --- | --- | --- |\n| Corporate Bond FPTB2426 | 1250 | Q3 2026 |\n| Working Capital Credit Line | 4800 | Q4 2026 |"
+      },
+      {
+        "chunk_id": "FPT.VN_2025_p14_c1",
+        "ticker": "FPT.VN",
+        "fiscal_year": 2025,
+        "page_number": 14,
+        "chunk_type": "text",
+        "content": "Footnote 18: Corporate Bond FPTB2426 carries a fixed coupon of 6.8% and is fully covered by cash reserves."
+      },
+      {
+        "chunk_id": "FPT.VN_2025_p3_c0",
+        "ticker": "FPT.VN",
+        "fiscal_year": 2025,
+        "page_number": 3,
+        "chunk_type": "text",
+        "content": "Global IT services segment remained the primary revenue driver across digital transformation contracts."
+      }
+    ]
+  },
+  {
+    "question_id": "HPG_Q2",
+    "ticker": "HPG.VN",
+    "fiscal_year": 2025,
+    "question": "Evaluate HPG leverage, net debt to EBITDA, and Dung Quat 2 capital expenditure commitments.",
+    "ground_truth_answer": "HPG.VN shows debt-to-equity of 0.7273, net debt of 58000 VND Bn, net debt to EBITDA of 2.4167, and 24500 VND Bn capex commitment for Dung Quat 2.",
+    "expected_chunk_ids": ["HPG.VN_2025_p22_t0", "HPG.VN_2025_p22_c1"],
+    "expected_facts": ["0.7273", "24500", "Dung Quat 2"],
+    "financial_input": {
+      "ticker": "HPG.VN",
+      "fiscal_year": 2025,
+      "currency": "VND",
+      "revenue": 138000.0,
+      "cost_of_revenue": 118000.0,
+      "operating_income": 16500.0,
+      "ebitda": 24000.0,
+      "net_income": 12200.0,
+      "total_assets": 210000.0,
+      "current_assets": 82000.0,
+      "inventory": 39000.0,
+      "cash_and_equivalents": 22000.0,
+      "current_liabilities": 68000.0,
+      "total_debt": 80000.0,
+      "total_equity": 110000.0,
+      "operating_cash_flow": 18500.0,
+      "capital_expenditure": -24500.0
+    },
+    "news_headlines": [
+      "HPG hot-rolled coil output reaches new quarterly peak",
+      "Steel margin recovery supports HPG earnings expansion"
+    ],
+    "corpus_chunks": [
+      {
+        "chunk_id": "HPG.VN_2025_p22_t0",
+        "ticker": "HPG.VN",
+        "fiscal_year": 2025,
+        "page_number": 22,
+        "chunk_type": "table",
+        "content": "| Project Commitment | Committed Capex (VND Bn) | Status |\n| --- | --- | --- |\n| Dung Quat 2 Integrated Complex | 24500 | Phase 1 Commissioning |\n| Container Manufacturing Plant | 1800 | Operational |"
+      },
+      {
+        "chunk_id": "HPG.VN_2025_p22_c1",
+        "ticker": "HPG.VN",
+        "fiscal_year": 2025,
+        "page_number": 22,
+        "chunk_type": "text",
+        "content": "Long-term syndicated project loans for Dung Quat 2 are syndicated with domestic commercial banks with a 2-year grace period."
+      },
+      {
+        "chunk_id": "HPG.VN_2025_p5_c0",
+        "ticker": "HPG.VN",
+        "fiscal_year": 2025,
+        "page_number": 5,
+        "chunk_type": "text",
+        "content": "Agricultural segment contributed 5% of consolidated revenue during the fiscal year."
+      }
+    ]
+  },
+  {
+    "question_id": "DISTRESSED_Q3",
+    "ticker": "RISK.VN",
+    "fiscal_year": 2025,
+    "question": "Identify liquidity red flags, covenant breach risks, and operating cash flow deficits.",
+    "ground_truth_answer": "RISK.VN triggers liquidity and earnings quality red flags with current ratio 0.75, debt-to-equity 2.50, and a covenant waiver requirement on 3100 VND Bn syndicated debt.",
+    "expected_chunk_ids": ["RISK.VN_2025_p31_c0", "RISK.VN_2025_p31_t1"],
+    "expected_facts": ["0.75", "2.5", "3100"],
+    "financial_input": {
+      "ticker": "RISK.VN",
+      "fiscal_year": 2025,
+      "currency": "VND",
+      "revenue": 42000.0,
+      "cost_of_revenue": 35000.0,
+      "operating_income": 2800.0,
+      "ebitda": 4200.0,
+      "net_income": 1200.0,
+      "total_assets": 95000.0,
+      "current_assets": 30000.0,
+      "inventory": 14000.0,
+      "cash_and_equivalents": 3000.0,
+      "current_liabilities": 40000.0,
+      "total_debt": 50000.0,
+      "total_equity": 20000.0,
+      "operating_cash_flow": -3500.0,
+      "capital_expenditure": -2100.0
+    },
+    "news_headlines": [
+      "RISK.VN faces credit rating downgrade amid working capital strain",
+      "Bondholders request additional collateral following cash flow decline"
+    ],
+    "corpus_chunks": [
+      {
+        "chunk_id": "RISK.VN_2025_p31_c0",
+        "ticker": "RISK.VN",
+        "fiscal_year": 2025,
+        "page_number": 31,
+        "chunk_type": "text",
+        "content": "Going Concern Note: The company obtained a temporary covenant waiver on its 3100 VND Bn syndicated loan after breaching minimum interest coverage."
+      },
+      {
+        "chunk_id": "RISK.VN_2025_p31_t1",
+        "ticker": "RISK.VN",
+        "fiscal_year": 2025,
+        "page_number": 31,
+        "chunk_type": "table",
+        "content": "| Overdue Facility | Balance (VND Bn) | Waiver Expiry |\n| --- | --- | --- |\n| Syndicated Term Loan | 3100 | June 2026 |"
+      }
+    ]
+  }
+]
